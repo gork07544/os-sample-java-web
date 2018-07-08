@@ -1,4 +1,4 @@
-package com.tvsconsult.controller;
+package com.tvs.controllers;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
