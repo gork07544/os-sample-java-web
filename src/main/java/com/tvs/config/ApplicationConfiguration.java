@@ -30,12 +30,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.microsoft.azure.storage.CloudStorageAccount;
-import com.microsoft.azure.storage.blob.CloudBlobClient;
-import com.tvsconsult.model.Applications;
-import com.tvsconsult.model.Authorities;
-import com.tvsconsult.model.Company;
-import com.tvsconsult.model.Users;
+import com.tvs.model.*;
+
 
 @EnableAsync
 @Configuration
