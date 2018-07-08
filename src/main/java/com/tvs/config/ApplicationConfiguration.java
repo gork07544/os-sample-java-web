@@ -35,8 +35,12 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableAsync
 @Configuration
 @EnableWebMvc
-//{ "com.tvs.model", "com.tvs.dao", "com.tvs.controllers", "com.tvs.config", "com.tvs.services" }
-@ComponentScan(basePackages = { "com.tvs.controllers","com.tvs.config"})
+
+@ComponentScan(basePackages = { "com.tvs.model",
+								"com.tvs.dao",
+								"com.tvs.controllers",
+								"com.tvs.config",
+								"com.tvs.services" })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	// ========== Initialize jsp ViewResolver ==============
