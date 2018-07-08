@@ -4,4 +4,26 @@
 
 <web-app>
   <display-name>Sample Java Web Application</display-name>
+  
+      <servlet>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value></param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+
+    <servlet-mapping>
+        <servlet-name>DispatcherServlet</servlet-name>
+        <url-pattern>*.css</url-pattern>  
+        <url-pattern>/</url-pattern>
+		<url-pattern>/contacts</url-pattern>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+  
 </web-app>
