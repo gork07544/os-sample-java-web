@@ -63,10 +63,10 @@ public class UserControler {
 			res = "The new authority " + authority + " is added to  the user.";
 			aouth = new Authorities(user, authority);
 			Authorities aouthResult = authoritiesDAO.insertAuthority(aouth);
-			res = authority;
+			user = usersDAO.getUserByUserName(username); 
 		}
 		
-		return new ModelAndView("user", "message", res);
+		return new ModelAndView("user", "message", user);
 	}
 
 	@RequestMapping(value = "/createuser", method = RequestMethod.POST)
