@@ -124,6 +124,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 		}
 	}
 
+	/*
 	// =============== Device detection Interseptor ==============
 	@Bean
 	public DeviceResolverHandlerInterceptor deviceResolverHandlerInterceptor() {
@@ -146,7 +147,8 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
 		argumentResolvers.add(deviceHandlerMethodArgumentResolver());
 	}
-
+	*/
+	
 	// ========== Register static ResourceHandler ==============
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
