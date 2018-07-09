@@ -152,7 +152,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/csss/**").addResourceLocations("classpath:/css/").setCachePeriod(3600).resourceChain(false);
 		registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/").setCachePeriod(3600).resourceChain(false);
-		registry.addResourceHandler("/**").addResourceLocations("/resources/").setCachePeriod(3600).resourceChain(false);
+		//registry.addResourceHandler("/**").addResourceLocations("/resources/").setCachePeriod(3600).resourceChain(false);
 	}
 	
 	// ========== Initialize MultipartResolver for FileUpload ==============
