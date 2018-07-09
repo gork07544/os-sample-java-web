@@ -37,4 +37,21 @@ public class HomeController {
 		return new ModelAndView("contacts", "message", s);
 	}
 
+
+	@RequestMapping("/projects")
+	public ModelAndView projF(Device device, @RequestParam(value = "error", required = false) String error,
+			@RequestParam(value = "logout", required = false) String logout) {
+		String str = "";
+		//Device device = DeviceUtils.getCurrentDevice(request);
+		if (device.isMobile()) {
+			str = "Hello mobile client!";
+        } else if (device.isTablet()) {
+        	str = "Hello tablet client!";
+        } else {
+        	str = "Hello desktop client!";         
+        }
+		return new ModelAndView("projects", "message", str);
+	}
+
+	
 }
