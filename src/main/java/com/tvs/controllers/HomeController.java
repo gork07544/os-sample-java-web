@@ -38,7 +38,7 @@ public class HomeController {
 	}
 
 
-	/*
+		
 	@RequestMapping("/projects")
 	public ModelAndView projF(Device device, @RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout) {
@@ -53,6 +53,6 @@ public class HomeController {
         }
 		return new ModelAndView("projects", "message", str);
 	}
-	*/
+
 	
 }
