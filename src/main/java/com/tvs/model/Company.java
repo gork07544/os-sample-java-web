@@ -8,6 +8,8 @@ import javax.persistence.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import com.tvs.model.*;
+
 @Entity
 @Table(name = "company")
 public class Company {

@@ -1,6 +1,7 @@
 package com.tvs.model;
 
 import javax.persistence.*;
+import com.tvs.model.*;
 
 @Entity
 @Table(name = "authorities")
