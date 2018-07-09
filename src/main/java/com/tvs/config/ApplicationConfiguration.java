@@ -30,6 +30,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import com.tvs.model.*;
+
 
 
 @EnableAsync
@@ -77,8 +79,8 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	/////VERY IMPORTANT SET THE ENVIREMONT TO LOCAL
 	/// 1.change to false and add database cartage to the build job gear
 	////2. change the configurations bellow
-	//private boolean local = true;
-	private boolean local = false;
+	private boolean local = true;
+	//private boolean local = false;
 	
 	
 	// ========== Initialize jsp ViewResolver ==============
@@ -103,5 +105,31 @@ public DataSource dataSource() {
 	return driverManagerDataSource;
 }
 
+
+// ========== Initialize Session Factory for Hibernate ==============
+@Bean(name = "sessionFactory")
+public SessionFactory sessionFactory() {
+	try {
+		setLocalEnvironmentVariables();
+		org.hibernate.cfg.Configuration configuration = new org.hibernate.cfg.Configuration();
+		configuration.addAnnotatedClass(Users.class)
+		.addAnnotatedClass(Authorities.class)
+		.addAnnotatedClass(Company.class)
+		.addAnnotatedClass(Applications.class)
+				// .addResource("Users.hbm.xml").addResource("Authorities.hbm.xml")
+				.setProperty("hibernate.connection.driver_class", hibernate_driver_class)
+				.setProperty("hibernate.connection.url", url)
+				.setProperty("hibernate.connection.username", username)
+				.setProperty("hibernate.connection.password", password)
+				.setProperty("hibernate.id.new_generator_mappings","false")
+				.setProperty("hibernate.dialect", hibernate_dialect);
+		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties()).build();
+		return configuration.buildSessionFactory(serviceRegistry);
+	} catch (Throwable ex) {
+		System.err.println("Initial SessionFactory creation failed." + ex);
+		throw new ExceptionInInitializerError(ex);
+	}
+}
 
 }
