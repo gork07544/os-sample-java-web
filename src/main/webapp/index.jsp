@@ -22,8 +22,8 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  -->
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.1/parallax.min.js"></script>
@@ -74,28 +74,28 @@
         <li class="active"><a data-ajax="false" href="${indexUrl}">Home</a></li>
         
         <c:url var="projectsUrl" value="/projects"/>
-        <li><a  href="${projectsUrl}">Projects</a></li>
+        <li><a data-ajax="false" href="${projectsUrl}">Projects</a></li>
 
         <c:url var="aboutusUrl" value="/aboutus"/>
-        <li><a  href="${aboutusUrl}">About us</a></li>
+        <li><a data-ajax="false" href="${aboutusUrl}">About us</a></li>
 
         <c:url var="contactUrl" value="/contacts"/>
-        <li><a  href="${contactUrl}">Contact</a></li>
+        <li><a data-ajax="false" href="${contactUrl}">Contact</a></li>
       </ul>
       
     <ul class="nav navbar-nav navbar-right">
        <c:url var="signUrl" value="/createuser"/>
-        <li><a  href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
+        <li><a data-ajax="false" href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
         
 <c:choose>
   <c:when test="${pageContext.request.userPrincipal.authenticated}">
 	<c:url var="userUrl" value="/user"/>
-	<li><a  href="${userUrl}"><span class="glyphicon glyphicon-user"></span>
+	<li><a data-ajax="false" href="${userUrl}"><span class="glyphicon glyphicon-user"></span>
 	 	<c:out value="${pageContext.request.remoteUser}"/></a>
 	</li>
 	<li>
     <c:url var="logoutUrl" value="/logout"/>
-    <form  class="form-inline" action="${logoutUrl}" method="post" style="width:100%;">
+    <form data-ajax="false" class="form-inline" action="${logoutUrl}" method="post" style="width:100%;">
       <button type="submit" value="Log out"  class="btn-link" style="color:#000000;width:100%;"><span class="glyphicon glyphicon-log-out"></span> Log out</button>
       <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </form>
@@ -103,7 +103,7 @@
 </c:when>
   <c:otherwise>
   		<c:url var="loginUrl" value="/login"/>		
-		<li><a  href="${loginUrl}"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
+		<li><a data-ajax="false" href="${loginUrl}"><span class="glyphicon glyphicon-log-in"></span> Log in</a></li>
 	</c:otherwise>
 </c:choose>
 		
@@ -152,7 +152,7 @@
 			</h4>
 			<br/>
 			<div>
-				<a href="${projectsUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">Book a meeting</h4></a>
+				<a data-ajax="false" href="${projectsUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">Book a meeting</h4></a>
 			</div>
 		</div>
       	  </div>			
@@ -177,7 +177,7 @@
 			</h4>
 			<br/>
 			<div>
-				<a href="${contactUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">See available funds</h4></a>
+				<a data-ajax="false" href="${contactUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">See available funds</h4></a>
 			</div>
 		</div>
       	  </div>			
@@ -200,7 +200,7 @@
 			“Our vision is to be the consulting company that best understands the start-ups` financial needs and provide them with an ease, less bureaucratic process for applying for funds.  
 			</h4><br/>
 			<div>
-					<a href="${aboutusUrl}" class="fronPageLinks">Contact us &raquo;</a>
+					<a data-ajax="false" href="${aboutusUrl}" class="fronPageLinks">Contact us &raquo;</a>
 			</div><br/><br/>
 		</div>
       	  </div>			
@@ -223,7 +223,7 @@
 			</h4>
 			<br/>
 			<div><br/>
-				<a href="${projectsUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">See available funds</h4></a>
+				<a data-ajax="false" href="${projectsUrl}" class="btn btnfr btn-lg"><h4 style="font-weight: bold;">See available funds</h4></a>
 			</div>
 		</div>
       	  </div>			
@@ -232,11 +232,11 @@
     </div>
 
 <!-- Left and right controls -->
-  <a  class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+  <a data-ajax="false" class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a  class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+  <a data-ajax="false" class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
@@ -272,7 +272,7 @@
  		</div>
           	<h2>DISCOUNTS</h2>
           	<h4>We get money only after the job is done. For more help and work unrelated with a particular project additional fees may apply.</h4>
-			<a  class="fronPageLinks" href="${contactUrl}">Find out more &raquo;</a>
+			<a data-ajax="false" class="fronPageLinks" href="${contactUrl}">Find out more &raquo;</a>
 			<br /> <br />
 	</div>
  <div class="col-md-4 wow zoomIn" data-wow-duration="0.7s" data-wow-delay="0.5s" style="text-align: center;">
@@ -284,7 +284,7 @@
  		</div>
           	<h2>FIND PROJECTS</h2>
           	<h4>Find the best financial fund for your business. We have a long list with public financial funds available for applicants.  </h4>
-       		<a  class="fronPageLinks" href="${projectsUrl}">Find out more &raquo;</a>
+       		<a data-ajax="false" class="fronPageLinks" href="${projectsUrl}">Find out more &raquo;</a>
 			<br /> <br />
        </div>
  <div class="col-md-4 wow zoomIn" data-wow-duration="0.7s" data-wow-delay="0.5s" style="text-align: center;">
@@ -296,7 +296,7 @@
  		</div>
           	<h2>GET HELP</h2>
          	<h4>Let TVSConsult to take care of the application details while your business is focus in other areas of interests.</h4>
-			<a  class="fronPageLinks" href="${aboutusUrl}">Find out more &raquo;</a>
+			<a data-ajax="false" class="fronPageLinks" href="${aboutusUrl}">Find out more &raquo;</a>
 			<br /> <br /> <br /><br />
         </div>
 	 </div>
@@ -344,7 +344,7 @@ Make your business successful with the help of TVSConsult
     <div class="offset-feature--text wow fadeIn"   data-wow-duration="1.5s"  data-wow-delay="0.6s"    >
 		Whether you're an expert or a newcomer our task-focused to help start-ups find the most suitable funds for them and assists with the application process.Whether you're an expert or a newcomer our task-focused to help start-ups find the most suitable funds for them and assists with the application process.
 	</div><br />
-	<a  class="fronPageLinks  wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.9s" style="text-shadow:none" href="${projectsUrl}">
+	<a data-ajax="false" class="fronPageLinks  wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.9s" style="text-shadow:none" href="${projectsUrl}">
 		Browse the Project &raquo;
 	</a>
 <br /><br /><br />
@@ -357,21 +357,21 @@ Make your business successful with the help of TVSConsult
           <h2 class="offset-feature--title" style="font-size: 30px;color: #34302D;">DISCOUNTS</h2>
           <div class="offset-feature--text" style="margin-top: 10px;">We get money only after the job is done. For more help and work unrelated with a particular project additional fees may apply.</div>
           <br />
-          <a " class="fronPageLinks"  style="text-shadow:none" href="${contactUrl}">View details &raquo;</a>
+          <a data-ajax="false" class="fronPageLinks"  style="text-shadow:none" href="${contactUrl}">View details &raquo;</a>
         <br /><br /><br />
         </div>
 		<div class="col-md-4 wow zoomIn" data-wow-duration="0.7s" data-wow-delay="0.5s" >
           <h2 class="offset-feature--title" style="font-size: 30px;color: #34302D;">FIND PROJECTS</h2>
           <div class="offset-feature--text" style="margin-top: 10px;">Find the best financial fund for your business. We have a long list with public financial funds available for applicants.</div>
           <br />
-          <a  class="fronPageLinks"  style="text-shadow:none" href="${projectsUrl}">View details &raquo;</a>
+          <a data-ajax="false" class="fronPageLinks"  style="text-shadow:none" href="${projectsUrl}">View details &raquo;</a>
         <br /><br /><br />
         </div>
 		<div class="col-md-4 wow zoomIn" data-wow-duration="0.7s" data-wow-delay="0.5s" >
           <h2 class="offset-feature--title" style="font-size: 30px;color: #34302D;">GET HELP</h2>
           <div class="offset-feature--text" style="margin-top: 10px;">Let TVSConsult to take care of the application details while your business is focus in other areas of interests.</div>
           <br />
-          <a  class="fronPageLinks"  style="text-shadow:none" href="${aboutusUrl}">View details &raquo;</a>
+          <a data-ajax="false" class="fronPageLinks"  style="text-shadow:none" href="${aboutusUrl}">View details &raquo;</a>
           <br /><br /><br /><br /><br /><br />
         </div>
      </div>
@@ -416,7 +416,7 @@ Make your business successful with the help of TVSConsult
 			Contact Support
 		</div>
 		<div>
-			<a href="${contactUrl}">Contact us</a>
+			<a data-ajax="false" href="${contactUrl}">Contact us</a>
 		</div>
 			<br /><br />
 	</div>
@@ -427,9 +427,9 @@ Make your business successful with the help of TVSConsult
 			Professional Support
 		</div>
 		<div >
-			<a  href="${projectsUrl}">Projects</a>
-			<a  style="margin-left: 3%;" href="${aboutusUrl}">About us</a>
-			<a  style="margin-left: 3%;" href="${contactUrl}">Consulting</a>
+			<a data-ajax="false" href="${projectsUrl}">Projects</a>
+			<a data-ajax="false" style="margin-left: 3%;" href="${aboutusUrl}">About us</a>
+			<a data-ajax="false" style="margin-left: 3%;" href="${contactUrl}">Consulting</a>
 		</div>
 			<br /><br />
 	</div>
@@ -446,12 +446,12 @@ Make your business successful with the help of TVSConsult
 		<hr style = 'background-color:#1a1a1a; border-width:2; border-color:#4d4d4d; height:1px; lineheight:0; width:70%;' />
 		<br />
     	<ul id="nav" class=" wow fadeIn"  data-wow-duration="1.5s"  data-wow-delay="0.5s" >
-        	<li ><a  href="${indexUrl}" title="Home">Home</a></li>
-            <li><a  href="${projectsUrl}" title="Projects">Projects</a></li>
-            <li><a  href="${aboutusUrl}" title="About us">About us</a></li>
-            <li><a  href="${contactUrl}" title="Contact">Contact</a></li>
-            <li><a  href="${indexUrl}" title="Register">Register</a></li>
-            <li ><a  href="${indexUrl}" style="border-right:0px;" title="Log in">Log in</a></li>   
+        	<li ><a data-ajax="false" href="${indexUrl}" title="Home">Home</a></li>
+            <li><a data-ajax="false" href="${projectsUrl}" title="Projects">Projects</a></li>
+            <li><a data-ajax="false" href="${aboutusUrl}" title="About us">About us</a></li>
+            <li><a data-ajax="false" href="${contactUrl}" title="Contact">Contact</a></li>
+            <li><a data-ajax="false" href="${indexUrl}" title="Register">Register</a></li>
+            <li ><a data-ajax="false" href="${indexUrl}" style="border-right:0px;" title="Log in">Log in</a></li>   
         </ul>
 		<br />
 		
@@ -506,10 +506,10 @@ Make your business successful with the help of TVSConsult
 		
 		
 		<br />
-        <p><a  href="${aboutusUrl}" title="G.A. web development">G.A. web development</a></p>
-        <p>© 2015 <a  href="${aboutusUrl}">G.A. Dev. </a>
-        	Inc. All Rights Reserved. <a  href="${aboutusUrl}">Terms of Use</a>
-        	 and <a  href="${aboutusUrl}">Privacy</a>
+        <p><a data-ajax="false" href="${aboutusUrl}" title="G.A. web development">G.A. web development</a></p>
+        <p>© 2015 <a data-ajax="false" href="${aboutusUrl}">G.A. Dev. </a>
+        	Inc. All Rights Reserved. <a data-ajax="false" href="${aboutusUrl}">Terms of Use</a>
+        	 and <a data-ajax="false" href="${aboutusUrl}">Privacy</a>
         </p>
         <br />
         
