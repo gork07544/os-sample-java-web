@@ -40,7 +40,4 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
-    <intercept-url pattern="/login*" access="permitAll" requires-channel="https"/>
-    <intercept-url pattern="/aboutus" access="permitAll" requires-channel="https"/>
-    
 </web-app>
