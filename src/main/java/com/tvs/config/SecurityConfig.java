@@ -28,7 +28,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-    	 http
+     
+    	http
          .authorizeRequests()
           .antMatchers("/index*").permitAll()
          	.antMatchers("/sitemap.xml").permitAll()
@@ -68,14 +69,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //         	 .antMatchers("/css/*").requiresInsecure()
 //         	.antMatchers("/welcome*").requiresInsecure()
 
-// 			.anyRequest().requiresSecure();
-        	.anyRequest().requiresInsecure()
+ 			.anyRequest().requiresSecure()
+//       	.anyRequest().requiresInsecure()
         	.and()
         .sessionManagement()
             .maximumSessions(1)
             .expiredUrl("/login?expired");
     }
 
+    
+    
+    
 }
 
 
