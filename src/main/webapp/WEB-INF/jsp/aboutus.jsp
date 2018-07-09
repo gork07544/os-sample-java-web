@@ -14,15 +14,19 @@
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Varela Round">
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
    
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <c:url var="eUrl" value="/csss/site.css"/>
 <link rel="stylesheet" href="${eUrl}" type="text/css" />
-  
+<!-- Custom Fonts -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.4.1/parallax.min.js"></script>
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
 <script>
        new WOW().init();
 </script>
@@ -55,21 +59,21 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
    <ul class="nav navbar-nav">
-        <li><a href="${indexUrl}">Home</a></li>
+        <li><a data-ajax="false" href="${indexUrl}">Home</a></li>
         
         <c:url var="projectsUrl" value="/projects"/>
-        <li><a href="${projectsUrl}">Projects</a></li>
+        <li><a data-ajax="false" href="${projectsUrl}">Projects</a></li>
 
         <c:url var="aboutusUrl" value="/aboutus"/>
-        <li  class="active"><a href="${aboutusUrl}">About us</a></li>
+        <li data-ajax="false"  class="active"><a href="${aboutusUrl}">About us</a></li>
 
         <c:url var="contactUrl" value="/contacts"/>
-        <li><a href="${contactUrl}">Contact</a></li>
+        <li><a data-ajax="false" href="${contactUrl}">Contact</a></li>
       </ul>
 
        <ul class="nav navbar-nav navbar-right">
        <c:url var="signUrl" value="/createuser"/>
-        <li><a href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
+        <li><a data-ajax="false" href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
         
 <c:url var="userUrl" value="/user"/>
 <c:url var="logoutUrl" value="/logout"/>
