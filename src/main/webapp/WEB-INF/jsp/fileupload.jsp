@@ -50,21 +50,21 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
    <ul class="nav navbar-nav">
-        <li><a href="${indexUrl}">Home</a></li>
+        <li><a data-ajax="false" href="${indexUrl}">Home</a></li>
         
         <c:url var="projectsUrl" value="/projects"/>
-        <li><a href="${projectsUrl}">Projects</a></li>
+        <li><a data-ajax="false" href="${projectsUrl}">Projects</a></li>
 
         <c:url var="aboutusUrl" value="/aboutus"/>
-        <li><a href="${aboutusUrl}">About us</a></li>
+        <li><a data-ajax="false" href="${aboutusUrl}">About us</a></li>
 
         <c:url var="contactUrl" value="/contacts"/>
-        <li><a href="${contactUrl}">Contact</a></li>
+        <li><a data-ajax="false" href="${contactUrl}">Contact</a></li>
       </ul>
 
        <ul class="nav navbar-nav navbar-right">
        <c:url var="signUrl" value="/createuser"/>
-        <li><a href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
+        <li><a data-ajax="false" href="${signUrl}"><span class="glyphicon glyphicon-new-window"></span> Sign Up</a></li>
         
 <c:choose>
   <c:when test="${pageContext.request.userPrincipal.authenticated}">
