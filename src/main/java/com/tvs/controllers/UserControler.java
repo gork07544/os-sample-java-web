@@ -16,6 +16,8 @@ import com.tvs.model.*;
 @Controller
 public class UserControler {
 
+	
+	/*
 	@Autowired
 	public UsersDAO usersDAO;
 
@@ -88,5 +90,5 @@ public class UserControler {
 		String str = "";
 		return new ModelAndView("createuser", "message", str);
 	}
-
+	*/
 }

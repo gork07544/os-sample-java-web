@@ -39,8 +39,8 @@ import com.tvs.model.*;
 @EnableWebMvc
 @ComponentScan(basePackages = { "com.tvs.model",
 								"com.tvs.dao",
-								"com.tvs.controllers",
 								"com.tvs.config",
+								"com.tvs.controllers",
 								"com.tvs.services" })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
@@ -79,7 +79,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	/////VERY IMPORTANT SET THE ENVIREMONT TO LOCAL
 	/// 1.change to false and add database cartage to the build job gear
 	////2. change the configurations bellow
-	private boolean local = true;
+	private boolean local = false;
 	//private boolean local = false;
 	
 	
