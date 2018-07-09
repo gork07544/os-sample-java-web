@@ -70,8 +70,8 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 		this.host = "jws-app-mysql";//"127.0.0.1";
 		this.port = "3306";
-		this.username = System.getenv("MYSQL_USER");
-		this.password = System.getenv("MYSQL_PASSWORD");
+		this.username = "userXDs";//System.getenv("MYSQL_USER");
+		this.password = "jau07OFD";//System.getenv("MYSQL_PASSWORD");
 		this.url = String.format("jdbc:mysql://%s:%s/root", host, port);
 		}
 	}
