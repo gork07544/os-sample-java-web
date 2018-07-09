@@ -22,13 +22,11 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
  *
  * @author Rob Winch
  */
-public class MessageSecurityWebApplicationInitializer {
-	
-}
-//public class MessageSecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
+
+public class MessageSecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 	//public MessageSecurityWebApplicationInitializer() {
-     //  super(SecurityConfig.class);
+    //   super(SecurityConfig.class);
     //}
 	
-	
-//}
+}
+

@@ -9,9 +9,9 @@ public class SpringMvcInitializer extends AbstractAnnotationConfigDispatcherServ
 	private static final String DEFAULT_UPLOAD_LOCATION = null;
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { ApplicationConfiguration.class };
+		return new Class[] { ApplicationConfiguration.class};
 	}
- 
+		
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
 		return null;
