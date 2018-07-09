@@ -76,7 +76,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	///// VERY IMPORTANT SET THE ENVIREMONT TO LOCAL
 	/// 1.change to false and add database cartage to the build job gear
 	//// 2. change the configurations bellow
-	private boolean local = true;
+	private boolean local = false;
 	// private boolean local = false;
 
 	// ========== Initialize jsp ViewResolver ==============
@@ -150,9 +150,9 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	// ========== Register static ResourceHandler ==============
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/csss/**").addResourceLocations("/resources/css/");
-		registry.addResourceHandler("/images/**").addResourceLocations("/resources/images/");
-		registry.addResourceHandler("/**").addResourceLocations("/resources/");
+		registry.addResourceHandler("/csss/**").addResourceLocations("classpath:/css/").setCachePeriod(3600).resourceChain(false);
+		registry.addResourceHandler("/images/**").addResourceLocations("classpath:/images/").setCachePeriod(3600).resourceChain(false);
+		registry.addResourceHandler("/**").addResourceLocations("/resources/").setCachePeriod(3600).resourceChain(false);
 	}
 	
 	// ========== Initialize MultipartResolver for FileUpload ==============
