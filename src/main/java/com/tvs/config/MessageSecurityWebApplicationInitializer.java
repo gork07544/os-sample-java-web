@@ -15,6 +15,7 @@
  */
 package com.tvs.config;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /**
@@ -23,6 +24,7 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
  * @author Rob Winch
  */
 
+@Profile("dev")
 public class MessageSecurityWebApplicationInitializer extends AbstractSecurityWebApplicationInitializer {
 	//public MessageSecurityWebApplicationInitializer() {
     //   super(SecurityConfig.class);

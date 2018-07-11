@@ -15,6 +15,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver;
 import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
@@ -35,14 +36,15 @@ import com.tvs.model.*;
 @EnableAsync
 @Configuration
 @EnableWebMvc
+@Profile("dev")
 @ComponentScan(basePackages = { "com.tvs.model", "com.tvs.dao", "com.tvs.config", "com.tvs.controllers",
 		"com.tvs.services" })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	private String host = "jws-app-mysql";
 	private String port = "3306";
-	private String username = System.getenv("MYSQL_USER");
-	private String password = System.getenv("MYSQL_PASSWORD");
+	private String username = System.getenv("DB_USERNAME");
+	private String password = System.getenv("DB_PASSWORD");
 	private String url = String.format("jdbc:mysql://%s:%s/mytomcatapp", host, port);
 	private String hibernate_driver_class = "com.mysql.jdbc.Driver";
 	private String hibernate_dialect = "org.hibernate.dialect.MySQLDialect";
@@ -67,8 +69,8 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 			this.host = "jws-app-mysql";// "127.0.0.1";
 			this.port = "3306";
-			this.username = "userXDs";// System.getenv("MYSQL_USER");
-			this.password = "jau07OFD";// System.getenv("MYSQL_PASSWORD");
+			this.username = System.getenv("DB_USERNAME");//"userXDs";// System.getenv("MYSQL_USER");
+			this.password = System.getenv("DB_PASSWORD");//"jau07OFD";// System.getenv("MYSQL_PASSWORD");
 			this.url = String.format("jdbc:mysql://%s:%s/root", host, port);
 		}
 	}
@@ -76,7 +78,7 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	///// VERY IMPORTANT SET THE ENVIREMONT TO LOCAL
 	/// 1.change to false and add database cartage to the build job gear
 	//// 2. change the configurations bellow
-	private boolean local = true;
+	private boolean local = false;
 	// private boolean local = false;
 
 	// ========== Initialize jsp ViewResolver ==============
