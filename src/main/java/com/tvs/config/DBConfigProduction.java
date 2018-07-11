@@ -18,7 +18,7 @@ import com.tvs.model.*;
 @Configuration
 @EnableWebMvc
 @Profile("production") //based on env variable spring_profiles_active=production set in OpenShift
-public class DBconfigProd extends WebMvcConfigurerAdapter {
+public class DBConfigProduction extends WebMvcConfigurerAdapter {
 
 	private String host = "";
 	private String port = "";

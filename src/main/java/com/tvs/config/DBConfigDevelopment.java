@@ -19,7 +19,7 @@ import com.tvs.model.*;
 @Configuration
 @EnableWebMvc
 @Profile("development") //based on env variable spring_profiles_active=development must be saved in /etc/enviremont file to update use " source /etc/enviremont"    
-public class DBconfigDev extends WebMvcConfigurerAdapter {
+public class DBConfigDevelopment extends WebMvcConfigurerAdapter {
 
 	private String host = "";
 	private String port = "";
