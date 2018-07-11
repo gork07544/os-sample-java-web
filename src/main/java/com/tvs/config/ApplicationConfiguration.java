@@ -1,22 +1,9 @@
 package com.tvs.config;
 
-import java.net.URISyntaxException;
-import java.security.InvalidKeyException;
 import java.util.List;
-import java.util.Properties;
-
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.sql.DataSource;
-
-import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.service.ServiceRegistry;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.mobile.device.DeviceHandlerMethodArgumentResolver;
 import org.springframework.mobile.device.DeviceResolverHandlerInterceptor;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -30,8 +17,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-
-import com.tvs.model.*;
 
 @EnableAsync
 @Configuration

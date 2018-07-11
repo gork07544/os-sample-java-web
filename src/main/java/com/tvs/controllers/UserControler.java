@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tvs.dao.*;
 import com.tvs.model.*;
 
-
 @Controller
 public class UserControler {
 
@@ -23,8 +22,8 @@ public class UserControler {
 	@Autowired
 	private AuthoritiesDAO authoritiesDAO;
 	
-	@Autowired
-	private CompanyDAO companyDAO;
+	//@Autowired
+	//private CompanyDAO companyDAO;
 	
 	@Autowired
 	private ApplicationsDAO aplicationsDAO;
@@ -58,11 +57,10 @@ public class UserControler {
 			@RequestParam("authority") String authority) {
 		Users user = usersDAO.getUserByUserName(username);
 		Authorities aouth = null;
-		String res = "The user do not excists.";
 		if (user != null) {
-			res = "The new authority " + authority + " is added to  the user.";
+			//res = "The new authority " + authority + " is added to  the user.";
 			aouth = new Authorities(user, authority);
-			Authorities aouthResult = authoritiesDAO.insertAuthority(aouth);
+			authoritiesDAO.insertAuthority(aouth);
 			user = usersDAO.getUserByUserName(username); 
 		}
 		
