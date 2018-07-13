@@ -309,7 +309,7 @@
 
 <c:url var="poaralax1" value="/images/paralax1.jpg"/>
 
-<div class="parallax-window" data-parallax="scroll" data-image-src="${poaralax1}" data-speed="0.4" data-bleed="60" data-ios-fix="true" data-android-fix="true"
+<div class="parallax-window" data-parallax="scroll" data-image-src="${poaralax1}" data-speed="0.4" data-bleed="60" data-ios-fix="true" data-android-fix="true" data-z-index="-10"
 	 style="text-align: center;background: transparent;">
 <img class="  wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s" src="${logo}" style="width:45%;min-width:240px;"  />
 <div class="row wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.2s" style="margin-top:0px; width:100%;text-align: center; ">
@@ -515,62 +515,7 @@ Make your business successful with the help of TVSConsult
  
 	</div>
 </div> 
-<script>
 
-
-
-
-$(document).ready(function() {
-	   
-	
-	collapseNavbar();
-	//jQuery to collapse the navbar on scroll
-	function collapseNavbar() {
-		var topLine = $("#dvid2");
-		var goTop = $("#dvid");
-	 if (topLine.offset().top > 300) {
-			goTop.fadeIn();
-			console.log("Yes");
-	 } else {
-			goTop.fadeOut();
-	 }
-	}
-
-	$(window).scroll(collapseNavbar);
-	
-	
-	
-	$(function() {
-	    $('.page-scroll').bind('click', function(event) {
-	        $('html, body').stop().animate({
-	            scrollTop: $('#topdetection').offset().top
-	        }, 1300, 'easeInOutExpo');
-	        event.preventDefault();
-	    });
-	});
-	
-	
-		$.mobile.loading().hide();
-	
-		$("#myCarousel").swiperight(function() {
-	      $(this).carousel('prev');
-	    });
-	   $("#myCarousel").swipeleft(function() {
-	      $(this).carousel('next');
-	   });
-	   
-	   $('#myCarousel').on('slide.bs.carousel', function () {
-	 		$('.carousel-caption').fadeOut(400, 'swing', function() {
-	 			$('.carousel-caption').fadeIn(400, 'swing');
-	 		  });
-		});
-	   
-
-	});
-
-
-	
-</script>
 </body>
 
 </html>

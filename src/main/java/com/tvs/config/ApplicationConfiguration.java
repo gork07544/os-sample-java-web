@@ -21,7 +21,6 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableAsync
 @Configuration
 @EnableWebMvc
-//@Profile("dev", "prod")
 @ComponentScan(basePackages = { "com.tvs.model", "com.tvs.dao", "com.tvs.config", "com.tvs.controllers",
 		"com.tvs.services" })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {

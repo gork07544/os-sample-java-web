@@ -44,8 +44,6 @@
 </head>
 <body>
 
-
-
 <c:url var="indexUrl" value="/index.jsp"/>
 <nav class="navbar navbar-default" style="background-color: none;">
   <div class="container-fluid">
